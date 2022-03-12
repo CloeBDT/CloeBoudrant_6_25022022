@@ -7,10 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
+
   <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
+    <!--HEADER-->
+    <header id="header">
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page"/></a>
     </header>
+
+    <!--MAIN-->
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
@@ -23,11 +27,24 @@
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
+          <div>
+					  <label for="prenom">Prénom</label>
+					  <input name="firstName" type="text" id="prenom" aria-labelledby="labelPrenom" required/>
+          </div>
+          <div>
+					  <label for="nom">Nom</label>
+					  <input name="lastName" type="text" id="nom" aria-labelledby="labelNom" required/>
+          </div>
+          <div>
+            <label for="email">Email</label>
+					  <input name="mail" type="email" id="email" aria-labelledby="labelEmail" required/>
+          </div>
+          <div>
+            <label for="message">Votre message</label>
+					  <textarea name="votreMessage" id="message" maxlength="100" aria-labelledby="labelMessage" required></textarea>
+          </div>
+
+          <button class="contact_button" type="submit" aria-labelledby="labelSubmit">Envoyer</button>
 				</form>
 			</div>
 		</div>
