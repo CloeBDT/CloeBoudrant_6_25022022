@@ -17,9 +17,23 @@
     <!--MAIN-->
     <main id="main">
       <div class="photograph-header">
+        <div class="photographer_profil"></div>
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
+      <section class="photograph-medias">
+        <div class="trier">
+          <p class="trier_par">Trier par</p>
+          <select class="choix" tabindex="3">
+            <option class="pop" value="pop">Popularité</option>
+            <option class="date" value="dtae">Date</option>
+            <option class="titre" value="titre">Titre</option>
+          </select>
+        </div>
+      </section>
+
     </main>
+
+    <!--MODAL DE CONTACT-->
     <div id="contact_modal">
 			<div class="modal">
 				<header>
@@ -48,6 +62,11 @@
 				</form>
 			</div>
 		</div>
-    <script src="/scripts/utils/contactForm.js"></script>
+
+    <!--SCRIPT-->
+    <script type="module" src="scripts/factories/medias.js"></script>
+    <script type="module" src="scripts/factories/photographer.js"></script>
+    <script type="module" src="scripts/pages/photographer.js"></script>
+    <script type="module" src="scripts/utils/contactForm.js"></script>
   </body>
 </html>

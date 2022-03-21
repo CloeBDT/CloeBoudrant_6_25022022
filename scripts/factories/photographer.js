@@ -1,9 +1,12 @@
+
+
+//FACTORIE DE L'AFFICHAGE DES PROFILS DES PHOTOGRAPHES
 function photographerFactory(data) {
+  const { portrait, name, city, country, tagline, price, id } = data;
+  const picture = `assets/photographers/${portrait}`;
 
   function getUserCardDOM() {
-    const { portrait, name, city, country, tagline, price, id } = data;
-    
-    const picture = `assets/photographers/${portrait}`;
+    //Variables pour la création d'éléments HTML
     const article = document.createElement('article');
     const img = document.createElement('img');
     const h2 = document.createElement('h2');
@@ -11,10 +14,12 @@ function photographerFactory(data) {
     const h4 = document.createElement('h4');
     const p = document.createElement('p');
 
+    //Lien entre la page d'accueil et le renvoi vers la page du photographe clické
     article.addEventListener('click', () => {
-      window.location.href = `photographer.html ? id=${id}`;
+      window.location.href = `photographer.html?id=${id}`;
     })
 
+    //Assignation des valeurs aux attributs img, h2, h3, h4, p
     img.setAttribute('src', picture);
     img.setAttribute('alt', 'photo' + '' + name);
     h2.textContent = name;
@@ -23,12 +28,13 @@ function photographerFactory(data) {
     h4.textContent = tagline;
     p.textContent = price + '€/jour';
 
-
+    //Affichage dans HTML
     article.appendChild(img);
     article.appendChild(h2);
     article.appendChild(h3);
     article.appendChild(h4);
     article.appendChild(p);
+
     return (article);
   }
   return {getUserCardDOM};
