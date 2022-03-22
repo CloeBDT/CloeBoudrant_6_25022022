@@ -1,4 +1,4 @@
-
+export { photographerFactory as default}
 
 //FACTORIE DE L'AFFICHAGE DES PROFILS DES PHOTOGRAPHES
 function photographerFactory(data) {
