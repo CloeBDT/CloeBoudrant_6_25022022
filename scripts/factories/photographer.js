@@ -1,7 +1,7 @@
-export { photographerFactory as default}
+export default function photographerFactory(data) {
 
-//FACTORIE DE L'AFFICHAGE DES PROFILS DES PHOTOGRAPHES
-function photographerFactory(data) {
+  //FACTORIE DE L'AFFICHAGE DES PROFILS DES PHOTOGRAPHES
+
   const { portrait, name, city, country, tagline, price, id } = data;
   const picture = `assets/photographers/${portrait}`;
 

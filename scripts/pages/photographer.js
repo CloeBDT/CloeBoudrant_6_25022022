@@ -1,4 +1,4 @@
-import mediasFactory from '../factories/medias.js'
+import mediasFactory from '../factories/medias.js';
 
 const url = new URL(window.location.href);
 const photographerId = url.searchParams.get("id");

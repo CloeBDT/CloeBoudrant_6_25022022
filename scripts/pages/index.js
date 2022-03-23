@@ -1,4 +1,4 @@
-import photographerFactory from '../factories/photographer.js'
+import photographerFactory from '../factories/photographer.js';
 
 async function getPhotographers() {
   //Récupération ressources JSON
