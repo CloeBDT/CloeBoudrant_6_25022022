@@ -4,7 +4,7 @@ const url = new URL(window.location.href);
 const photographerId = url.searchParams.get("id");
 
 async function getMedias() {
-    const response = await fetch('../../data/photographers.json')
+    const response = await fetch('data/photographers.json')
     const data = await response.json()
     return data;
 }

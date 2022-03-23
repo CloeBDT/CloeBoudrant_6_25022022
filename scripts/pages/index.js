@@ -2,7 +2,7 @@ import photographerFactory from '../factories/photographer.js';
 
 async function getPhotographers() {
   //Récupération ressources JSON
-  const response = await fetch('../../data/photographers.json')
+  const response = await fetch('data/photographers.json')
   const photographers = await response.json()
   return photographers;
 }

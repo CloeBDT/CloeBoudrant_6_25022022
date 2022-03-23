@@ -1,6 +1,6 @@
 export default function mediasFactory(data) {
 
-    //FACTORIE DE L'AFFICHAGE DES MEDIAS DES PHOTOGRAPHES
+    //FACTORY DE L'AFFICHAGE DES MEDIAS DES PHOTOGRAPHES
 
     const { name, city, country, tagline, portrait } = data;
     const picture = `assets/photographers/${portrait}`;
