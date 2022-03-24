@@ -35,7 +35,7 @@ export default function photographerFactory(data) {
     article.appendChild(h4);
     article.appendChild(p);
 
-    return (article);
+    return article;
   }
   return {getUserCardDOM};
 }

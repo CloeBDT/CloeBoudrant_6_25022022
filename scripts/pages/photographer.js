@@ -1,4 +1,4 @@
-import mediasFactory from '../factories/medias.js';
+import { mediasFactory } from '../factories/medias.js';
 
 const url = new URL(window.location.href);
 const photographerId = url.searchParams.get("id");
@@ -10,13 +10,13 @@ async function getMedias() {
 }
   
 function displayData(photographers) {
-    const photographerProfil = document.querySelector('.photographer_profil');
+    const photographerProfil = document.querySelector('.photograph-header');
 
     photographers.forEach((photographer) => {
         if (photographer.id == photographerId) {
             const photographerModel = mediasFactory(photographer);
             const userCardDOM  = photographerModel.getUserMediaCardDOM();
-            photographerProfil.appendChild(userCardDOM );
+            photographerProfil.appendChild(userCardDOM);
         }
     });
 }
