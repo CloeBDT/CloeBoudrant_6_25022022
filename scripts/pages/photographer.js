@@ -1,4 +1,4 @@
-import { mediasFactory, testMediasFactory } from '../factories/medias.js';
+import { mediasFactory, DataMediasFactory } from '../factories/medias.js';
 
 //Renvoi vers la page du photographe ciblé
 const url = new URL(window.location.href);
@@ -26,9 +26,9 @@ async function displayMediaData(media) {
     
     media.forEach((media) => {
         if (media.photographerId == photographerId) {
-            const mediaModel = testMediasFactory(media);
-            const userTestCardDOM = mediaModel.getUserTestMediaCardDOM();
-            mediaSection.appendChild(userTestCardDOM);
+            const mediaModel = DataMediasFactory(media);
+            const userMediaCardDOM = mediaModel.getUserDataMediaCardDOM();
+            mediaSection.appendChild(userMediaCardDOM);
         }
     });
 }

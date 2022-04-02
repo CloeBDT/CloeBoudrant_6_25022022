@@ -1,4 +1,4 @@
-export { mediasFactory, testMediasFactory };
+export { mediasFactory, DataMediasFactory };
 
 //FACTORY DE L'AFFICHAGE DES PROFILS PERSONNELS DES PHOTOGRAPHES SUR LEURS PAGES
 function mediasFactory(data) {
@@ -32,57 +32,50 @@ function mediasFactory(data) {
 }
 
 //FACTORY DE L'AFFICHAGE DES MEDIAS DES PHOTOGRAPHES SUR LEURS PAGES
-function testMediasFactory(data) {
+function DataMediasFactory(data) {
     const { image, title, likes, video } = data;
-    const picture = `assets/medias/${image}`;
     const videoFile = `assets/medias/${video}`;
+    const picture = `assets/medias/${image}`;
+    
+    const article = document.createElement('article');
 
-    function getUserTestMediaCardDOM() {
+    function getUserDataMediaCardDOM() {
         if("video" in data) {
-            const article = document.createElement('article');
             const video = document.createElement('video');
-            const div = document.createElement('div');
-            const h2 = document.createElement('h2');
-            const p = document.createElement('p');
-            const heart = document.createElement('i');
 
             video.setAttribute('src', videoFile);
-            h2.textContent = title;
-            h2.setAttribute('aria-label', title);
-            p.textContent = likes;
-            heart.classList.add('fas', 'fa-heart');
 
             article.appendChild(video);
-            article.appendChild(div);
-            div.appendChild(h2);
-            div.appendChild(p);
-            p.appendChild(heart);
-
-            return article;
 
         } else {
-            const article = document.createElement('article');
             const img = document.createElement('img');
-            const div = document.createElement('div');
-            const h2 = document.createElement('h2');
-            const p = document.createElement('p');
-            const heart = document.createElement('i');
 
             img.setAttribute('src', picture);
             img.setAttribute('alt', 'photo' + '' + title);
-            h2.textContent = title;
-            h2.setAttribute('aria-label', title);
-            p.textContent = likes;
-            heart.classList.add('fas', 'fa-heart');
 
             article.appendChild(img);
-            article.appendChild(div);
-            div.appendChild(h2);
-            div.appendChild(p);
-            p.appendChild(heart);
-    
-            return article;
         }
+
+        const div = document.createElement('div');
+        const h2 = document.createElement('h2');
+        const p = document.createElement('p');
+        const heart = document.createElement('i');
+
+        h2.textContent = title;
+        h2.setAttribute('aria-label', title);
+        p.textContent = likes;
+        heart.className = 'fas fa-heart';
+
+        article.appendChild(div);
+        div.appendChild(h2);
+        div.appendChild(p);
+        p.appendChild(heart);
+    
+        return article;
     }
-    return {getUserTestMediaCardDOM};
+    return {getUserDataMediaCardDOM};
 }
+
+// function banner() {
+
+// }
