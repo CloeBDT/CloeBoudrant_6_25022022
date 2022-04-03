@@ -129,6 +129,20 @@
     margin-left: 5px;
 }
 
+.banner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #DB8876;
+    width: 376px;
+    height: 70px;
+    position: fixed;
+    z-index: 1;
+    border-radius: 5px 5px 0px 0px;
+    right: 36px;
+    bottom: 0px;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;

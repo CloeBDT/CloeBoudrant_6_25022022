@@ -76,6 +76,21 @@ function DataMediasFactory(data) {
     return {getUserDataMediaCardDOM};
 }
 
-// function banner() {
+function Banner() {
+    const banner = document.querySelector(".banner");
+    const p = document.createElement('p');
+    const heart = document.createElement('i');
+    const h3 = document.createElement('h3');
 
-// }
+    p.className = 'sommeLikes';
+    heart.className = 'fas fa-heart';
+    h3.className = 'prixPhorographe';
+
+    banner.appendChild(p);
+    p.appendChild(heart);
+    banner.appendChild(h3);
+    
+    return banner;
+}
+
+Banner();
