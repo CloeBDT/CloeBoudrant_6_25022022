@@ -24,7 +24,6 @@ async function displayData(photographers) {
 async function displayMediaData(media) {
     //Cible l'emplacement ou afficher les éléments
     const mediaSection = document.querySelector('.media_section');
-    const banner = document.querySelector('.banner');
     
     media.forEach((media) => {
         if (media.photographerId == photographerId) {
@@ -33,14 +32,6 @@ async function displayMediaData(media) {
             mediaSection.appendChild(userMediaCardDOM);
         }
     });
-
-    
-    const displayTotalLikes = document.createElement('p');
-    const displayHeart = document.createElement('i');
-    displayHeart.className = 'fas fa-heart';
-    displayTotalLikes.textContent = 0;
-    banner.appendChild(displayTotalLikes);
-    banner.appendChild(displayHeart);
 }
   
 async function init() {

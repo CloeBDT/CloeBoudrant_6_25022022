@@ -21,6 +21,8 @@ function mediasFactory(data) {
         const nom = document.createElement('p');
         const img = document.createElement('img');
         const h3 = document.createElement ('h3');
+        const displayTotalLikes = document.createElement('p');
+        const displayHeart = document.createElement('i');
   
         //Assignation des valeurs aux attributs img, h1, h2, p
         h1.textContent = name;
@@ -30,6 +32,7 @@ function mediasFactory(data) {
         img.setAttribute('src', picture);
         img.setAttribute('alt', 'photo' + '' + name);
         h3.textContent = price + '€ / jour';
+        displayHeart.className = 'fas fa-heart';
         
         //Affichage dans HTML
         texte.appendChild(h1);
@@ -38,6 +41,8 @@ function mediasFactory(data) {
         nomContact.appendChild(nom);
         photo.appendChild(img);
         likesPrix.appendChild(h3);
+        likesPrix.appendChild(displayTotalLikes);
+        likesPrix.appendChild(displayHeart);
     }
     return {getUserMediaCardDOM};
 }
