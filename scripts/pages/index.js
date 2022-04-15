@@ -10,7 +10,7 @@ async function getPhotographers() {
 async function displayData(photographers) {
   //Cible l'emplacement ou afficher les éléments
   const photographersSection = document.querySelector('.photographer_section');
-  
+
   photographers.forEach((photographer) => {
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
