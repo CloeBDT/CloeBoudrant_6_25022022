@@ -21,9 +21,12 @@ async function displayData(photographers) {
     });
 }
 
-async function displayMediaData(media) {
+async function displayMediaData(media, orderSort) {
     //Cible l'emplacement ou afficher les éléments
     const mediaSection = document.querySelector('.media_section');
+    mediaSection.innerHTML = '';
+    //Renvoi des médias triés
+    sortMedia(media, orderSort);
     
     media.forEach((media) => {
         if (media.photographerId == photographerId) {
@@ -33,17 +36,50 @@ async function displayMediaData(media) {
         }
     });
 }
+
+//Fonction de tri des médias
+function sortMedia(media, sortBy) {
+    switch (sortBy) {
+        case 'Popularité' :
+            media.sort(function (a, b) {
+            return b.likes - a.likes;
+            })
+            break;
+    
+        case 'Date' :
+            media.sort (function (a, b) {
+            return new Date(b.date) - new Date(a.date);
+            })
+            break;
+    
+        case 'Titre' :
+            media.sort (function (a, b) {
+            return a.title.localeCompare (b.title);
+            })
+            break;
+    }
+}
   
 async function init() {
     // Récupère les datas
     const { photographers, media } = await getMedias();
+    const option = document.querySelectorAll('[role="option"]');
+
+    //Ecoute sur les différentes options de tri des médias
+    option.forEach((li) => {
+        li.addEventListener('click', (e) => {
+            displayMediaData(media, e.srcElement.innerHTML);
+        })
+    })
+
     displayData(photographers);
-    displayMediaData(media);
+    displayMediaData(media, "Popularité");
     calcTotalLikes();
 }
   
 init();
 
+//Fonction pour incrémenter et décrémenter les likes des photographies
 function incrementationLike(e) {    
     let likeElement = e.currentTarget.previousSibling;
     let likeFix = likeElement.getAttribute("likes");
@@ -61,6 +97,7 @@ function incrementationLike(e) {
     calcTotalLikes();
 }
 
+// Fonction de calcul total des likes
 function calcTotalLikes() {
     let array = document.querySelectorAll(".infos-image p");
     let bannerTotal = document.querySelector(".banner p");

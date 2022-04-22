@@ -1,14 +1,3 @@
-#contact_modal {
-    display: none;
-    position: fixed;
-    background-color: rgba(128, 128, 128, 0.24);
-    top: 0;
-    width: 100vw;
-    height: 100%;
-    padding-top: 6vh;
-    z-index: 2;
-}
-
 .photograph-header {
     display: flex;
     justify-content: space-around;
@@ -21,6 +10,7 @@
 .photograph-header .texte, .photograph-header .photo {
     width: 35%;
 }
+
 .photograph-header .photo {
     display: flex;
     justify-content: end;
@@ -84,63 +74,190 @@
     margin: 10px 100px;
 }
 
+/**********TRIER **********/
 .trier {
- display: flex;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    top: 410px;
 }
 
-.trier_par {
-    padding-right: 15px;
+.trier p {
     font-size: 18px;
     font-weight: 700;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    height: 70px;
+    margin-left: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #901c1c;
+    color: white;
+    border: none;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #DB8876;
+    color: black;
+}
+
+.vitrine {
+    display: flex;
+    flex: 0.7;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "DM Sans";
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+#vitrine_arrow {
+    flex: 0.3;
+    font-size: 20px;
+}
+
+.selector {
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    width: 170px;
+    height: 210px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 25px;
+    background-color: #901c1c;
+    color: white;
     cursor: pointer;
 }
 
-.choix {
-    font-size: 18px;
-    font-weight: 700;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 54px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
+li {
+    list-style-type: none;
 }
 
-.choix button {
+ul {
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.line {
+    display: flex;
+    width: 135px;
+    background-color: white;
+    flex: 0.01;
+    align-items: flex-end;
+    margin: 0 0 0 15px;
+}
+
+.bloc_popularite {
+    font-size: 18px;
+    font-weight: 700;
+    height: 70px;
+    transition: all 0.3s ease;
+    height: 70px;
+}
+
+.bloc_popularite:hover {
+    background-color: #DB8876;
+    color: black;
+    border-radius: 5px 5px 0 0;
+}
+
+.bloc_popularite span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+}
+
+#arrow {
     display: flex;
     align-items: center;
+    height: 100%;
+    flex-direction: row-reverse;
     justify-content: space-around;
-    height: 56px;
-    width: 170px;
+    font-size: 20px;
+    font-family: "DM Sans";
+    font-size: 18px;
+}
+
+#arrow::before {
+    font-family: 'FontAwesome';
+    font-size: 20px;
+}
+
+.bloc_date, .bloc_titre {
+    margin-left: 20px;
     font-size: 18px;
     font-weight: 700;
-    padding: 0;
-    border: inherit;
-    background-color: inherit;
-    color: white;
+    height: 70px;
+    transition: all 0.3s ease;
+    height: 70px;
 }
 
-.fa-angle-down {
-    font-size: 20px;
-    cursor: pointer;
+.bloc_date:hover {
+    background-color: #DB8876;
+    color: black;
 }
 
-.fa-angle-up {
-    font-size: 20px;
+.bloc_date {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+}
+
+.bloc_titre {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+}
+
+.bloc_titre:hover {
+    background-color: #DB8876;
+    color: black;
+    border-radius: 0 0 5px 5px;
+}
+
+.date {
+    display: flex;
+    flex: 0.99;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.titre {
+    display: flex;
+    flex: 0.99;
+    margin-left: 20px;
+    align-items: center;
+    height: 100%;
+}
+
+/**********MEDIA_SECTION**********/
+#contact_modal {
     display: none;
-}
-
-hr {
-    width: 160px;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.24);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
 
 .media_section {
+    z-index: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px 70px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 120px;
 }
 
@@ -187,6 +304,7 @@ hr {
     color: #DB8876;
 }
 
+/**********BANNER**********/
 .banner {
     display: flex;
     flex-direction: row;
@@ -224,18 +342,19 @@ hr {
     order: 2;
 }
 
+/**********MODAL CONTACT**********/
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
     width: 669px;
-    height: 85vh;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
     padding: 35px;
-    margin: auto;
     box-shadow: rgba(0, 0, 0, 0.521) 0 0 15px;
+    margin: 20vh auto;
 }
 
 .modal header {
@@ -243,6 +362,7 @@ hr {
     width: 100%;
     height: auto;
     align-items: flex-start;
+    margin-bottom: 30px;
 }
 
 .modal header img, .modal-confirm img {
@@ -274,14 +394,14 @@ form div {
 
 form input {
     width: 100%;
-    height: 5vh;
+    height: 68px;
     border: none;
     border-radius: 5px;
 }
 
 form textarea {
     width: 100%;
-    height: 10vh;
+    height: 170px;
     border: none;
     border-radius: 5px;
 }
@@ -334,6 +454,7 @@ form textarea {
     margin-left: 630px;
 }
 
+/**********LIGHTBOX**********/
 .lightbox {
     display: none;
     position: fixed;
@@ -400,4 +521,74 @@ form textarea {
 
 .lightbox__container h2 {
     color: #901C1C;
+    align-self: flex-start;
+}
+
+/**********MEDIA QUERIES**********/
+@media screen and (max-width: 767px) {
+    .photograph-header {
+        flex-direction: column;
+        height: auto;
+        margin: 0;
+    }
+
+    .photograph-header .texte, .photograph-header .photo {
+        width: 90%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .photograph-header .photo {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .trier {
+        position: relative;
+        top: 0;
+        justify-content: center;
+    }
+
+    .media_section {
+        grid-template-columns: 1fr;
+        margin: 20px 0;
+    }
+
+    .photograph-medias {
+        margin: 20px 10px;
+    }
+
+    .banner {
+        width: 100%;
+        right: 0;
+    }
+
+   .modal header {
+       flex-direction: row;
+   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+.photograph-header {
+    padding: 0 10px;
+}
+
+    .texte h1  {
+        font-size: 40px;
+    }
+
+    .texte h2, .texte p {
+        font-size: 15px;
+    }
+
+    .photograph-header img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .media_section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1441px) {
 }

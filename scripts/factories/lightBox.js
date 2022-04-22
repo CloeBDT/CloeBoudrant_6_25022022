@@ -18,7 +18,7 @@ function LightboxFactory(data) {
     if('video' in data) {
         const video = document.createElement('video');
         video.setAttribute('src', videoFile);
-        video.setAttribute('controls', true);
+        video.setAttribute('autoplay', true);
         mediaLien.appendChild(video);
         lightboxMedia.appendChild(mediaLien);
     } else {
@@ -36,13 +36,15 @@ function LightboxFactory(data) {
 
     suivant.className = 'fas fa-angle-right';
     suivant.id = 'lightbox__next';
+    
 
     precedent.className = 'fas fa-angle-left';
     precedent.id = 'lightbox__prev';
+    
 
     fermer.className = 'fas fa-times';
     fermer.id = 'lightbox__close';
-    fermer.addEventListener("click", closeLightbox);
+    fermer.addEventListener('click', closeLightbox);
 
     lightboxIcons.appendChild(fermer);
     lightboxIcons.appendChild(precedent);

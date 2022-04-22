@@ -2,8 +2,9 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0239f6809f.js" crossorigin="anonymous"></script>
     <title>Fisheye - photographe </title>
@@ -25,20 +26,24 @@
 
       <section class="photograph-medias">
         <div class="trier">
-          <p class="trier_par">Trier par</p>
-          <div class="choix">
-            <button>
-              <span>Popularité</span>
-              <i class="fas fa-angle-down"></i>
-              <i class="fas fa-angle-up"></i>
-            </button>
-            <div class="testButton">
+          <p>Trier par</p>
+          <button class="button">
+            <span class="vitrine">Popularité</span>
+            <i class="fas fa-angle-down" id="vitrine_arrow"></i>
+          </button>
+          <ul class="selector" role="listbox">
+            <li class="bloc_popularite" role="option">
+              <i class="fas fa-angle-up" id="arrow">Popularité</i>
+            </li>
+            <li class="bloc_date" role="option">
+              <span class="date">Date</span>
               <hr class="line">
-              <span>Date</span>
+            </li>
+            <li class="bloc_titre" role="option">
+              <span class="titre">Titre</span>
               <hr class="line">
-              <span>Titre</span>
-            </div>
-          </div>
+            </li> 
+          </ul>
         </div>
 
         <div class="media_section"></div>
@@ -91,6 +96,7 @@
     <script type="module" src="scripts/factories/photographer.js"></script>
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script type="module" src="scripts/utils/lightBox.js" defer></script>
+    <script type="module" src="scripts/utils/sorter.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>

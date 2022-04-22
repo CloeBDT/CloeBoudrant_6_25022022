@@ -5,7 +5,7 @@ const lightbox = document.querySelector('.lightbox');
 
 function openLightbox() {
     lightbox.style.display = "block";
-}
+    }
 
 function closeLightbox() {
     lightbox.style.display = "none";
@@ -15,7 +15,6 @@ function closeLightbox() {
     lightbox.appendChild(lightboxMedia);
     lightbox.appendChild(lightboxIcons);
 
-    lightbox.removeChild(lightboxMedia);  
+    lightbox.removeChild(lightboxMedia);
     lightbox.removeChild(lightboxIcons);
 }
-

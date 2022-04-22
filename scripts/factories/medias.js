@@ -104,4 +104,3 @@ function DataMediasFactory(data) {
     }
     return {getUserDataMediaCardDOM};
 }
-

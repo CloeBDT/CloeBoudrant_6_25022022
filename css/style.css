@@ -3,6 +3,7 @@
 body {
     font-family: "DM Sans", sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 
@@ -74,4 +75,45 @@ h1 {
     font-size: 9px;
     margin-top: -10px;
     font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin: 10px 0 0 0;
+    }
+
+    header h1 {
+        margin-right: 0;
+    }
+
+    .photographer_section {
+        display: block;
+    }
+
+    .photographer_section article {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+    header {
+        justify-content: space-around;
+    }
+    
+    .logo {
+        margin-left: 0;
+    }
+
+    header h1 {
+        margin-right: 0;
+    }
+
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1441px) {
 }

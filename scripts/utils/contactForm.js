@@ -11,7 +11,7 @@ const modalConfirm = document.querySelector(".modal-confirm");
 //OUVERTURE ET FERMETURE DE LA MODAL
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
-  modal.style.display = 'block';
+  modal.style.display = 'flex';
   submitbtn.addEventListener('click', validate);
   prenom.addEventListener('input', prenomValid);
   nom.addEventListener('input', nomValid);
@@ -100,6 +100,7 @@ function validForm() {
       nomValid() == true && 
       emailValid() == true &&
       messageValid() == true) {
+        console.log(prenom.value, nom.value, email.value, message.value);
         return true;
       }
   return false;
