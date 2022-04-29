@@ -30,7 +30,7 @@ function mediasFactory(data) {
         p.textContent = tagline;
         nom.textContent = name;
         img.setAttribute('src', picture);
-        img.setAttribute('alt', 'photo' + '' + name);
+        img.setAttribute('alt', 'photo' + ' ' + name);
         h3.textContent = price + '€ / jour';
         displayHeart.className = 'fas fa-heart';
         
@@ -74,7 +74,7 @@ function DataMediasFactory(data) {
             const img = document.createElement('img');
             
             img.setAttribute('src', picture);
-            img.setAttribute('alt', 'photo' + '' + title);
+            img.setAttribute('alt', 'photo' + ' ' + title);
             
             div.appendChild(img);
             article.appendChild(div);

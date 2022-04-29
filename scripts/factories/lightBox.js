@@ -18,7 +18,7 @@ function LightboxFactory(data) {
     if('video' in data) {
         const video = document.createElement('video');
         video.setAttribute('src', videoFile);
-        video.setAttribute('autoplay', true);
+        video.setAttribute('controls', 'controls');
         mediaLien.appendChild(video);
         lightboxMedia.appendChild(mediaLien);
     } else {

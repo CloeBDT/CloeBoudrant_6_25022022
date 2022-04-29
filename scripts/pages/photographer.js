@@ -68,7 +68,7 @@ async function init() {
     //Ecoute sur les différentes options de tri des médias
     option.forEach((li) => {
         li.addEventListener('click', (e) => {
-            displayMediaData(media, e.srcElement.innerHTML);
+            displayMediaData(media, e.currentTarget.dataset.filter);
         })
     })
 

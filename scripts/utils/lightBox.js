@@ -4,7 +4,7 @@ export { openLightbox, closeLightbox };
 const lightbox = document.querySelector('.lightbox');
 
 function openLightbox() {
-    lightbox.style.display = "block";
+    lightbox.style.display = "flex";
     }
 
 function closeLightbox() {

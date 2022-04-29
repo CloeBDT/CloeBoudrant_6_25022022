@@ -1,4 +1,7 @@
+const main = document.getElementById('main');
 const submitbtn = document.querySelector('.btn-submit');
+const openModal = document.querySelector('.open-modal');
+const btnCloseModal = document.querySelector('.close-modal');
 const modal = document.getElementById('contact_modal');
 const modal2 = document.querySelector(".modal");
 const formData = document.querySelectorAll('.formData');
@@ -12,16 +15,21 @@ const modalConfirm = document.querySelector(".modal-confirm");
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
   modal.style.display = 'flex';
+  main.setAttribute('aria-hidden', 'true');
+  modal.setAttribute('aria-hidden', 'false');
   submitbtn.addEventListener('click', validate);
   prenom.addEventListener('input', prenomValid);
   nom.addEventListener('input', nomValid);
   email.addEventListener('input', emailValid);
   message.addEventListener('input', messageValid);
+  btnCloseModal.focus();
 }
 
 // eslint-disable-next-line no-unused-vars
 function closeModal() {
   modal.style.display = 'none';
+  main.setAttribute('aria-hidden', 'false');
+  modal.setAttribute('aria-hidden', 'true');
   submitbtn.removeEventListener('click', validate);  
   prenom.removeEventListener('input', prenomValid);
   nom.removeEventListener('input', nomValid);
@@ -29,8 +37,19 @@ function closeModal() {
   message.removeEventListener('input', messageValid);
   modal2.style.display = "block";
   modalConfirm.style.display = "none";
+  openModal.focus();
   reinit();
 }
+
+//FERMETURE DE LA MODALE AVEC LE CLAVIER
+btnCloseModal.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('keydown', e => {
+  const keyCode = e.keyCode ? e.keyCode : e.which;
+
+  if (modal.setAttribute('aria-hidden') == 'false' && keyCode === 27) {
+      closeModal();
+  }
+});
 
 //REINITIALISATION DU FORMULAIRE
 function reinit() {
