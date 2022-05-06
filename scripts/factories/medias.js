@@ -33,6 +33,7 @@ function mediasFactory(data) {
         img.setAttribute('alt', 'photo' + ' ' + name);
         h3.textContent = price + '€ / jour';
         displayHeart.className = 'fas fa-heart';
+        displayTotalLikes.setAttribute('aria-label', 'nombre de likes total');
         
         //Affichage dans HTML
         texte.appendChild(h1);
@@ -66,6 +67,8 @@ function DataMediasFactory(data) {
             const video = document.createElement('video');
 
             video.setAttribute('src', videoFile);
+            video.setAttribute('title', title);
+            video.setAttribute('tabindex', '0');
 
             div.appendChild(video);
             article.appendChild(div);
@@ -75,6 +78,7 @@ function DataMediasFactory(data) {
             
             img.setAttribute('src', picture);
             img.setAttribute('alt', 'photo' + ' ' + title);
+            img.setAttribute('tabindex', '0');
             
             div.appendChild(img);
             article.appendChild(div);
@@ -89,9 +93,9 @@ function DataMediasFactory(data) {
         heart.addEventListener('click', incrementationLike);
 
         h2.textContent = title;
-        h2.setAttribute('aria-label', title);
         p.textContent = likes;
         p.setAttribute('likes', likes);
+        p.setAttribute('aria-label', 'nombre de likes');
         heart.className = 'fas fa-heart';
         span.className = 'infos-image';
         

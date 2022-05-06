@@ -19,6 +19,7 @@ export default function photographerFactory(data) {
     })
 
     //Assignation des valeurs aux attributs img, h2, h3, h4, p
+    article.setAttribute('tabindex', '2');
     img.setAttribute('src', picture);
     img.setAttribute('alt', 'photo' + ' ' + name);
     h2.textContent = name;
