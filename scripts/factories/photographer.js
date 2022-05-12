@@ -46,6 +46,8 @@ export default function photographerFactory(data) {
     div2.appendChild(h3);
     div2.appendChild(h4);
     div2.appendChild(p);
+    div1.className = 'link';
+    div2.className = 'static-text';
 
     return article;
   }
