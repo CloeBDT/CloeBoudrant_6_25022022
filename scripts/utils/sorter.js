@@ -17,15 +17,36 @@ optionPopularite.addEventListener('click', () => {
     selector.style.display = 'none';
     vitrine.textContent = "Popularité";
 });
+optionPopularite.addEventListener('keydown', e => {
+    if (e.key === "Enter") {
+        button.style.display = 'flex';
+        selector.style.display = 'none';
+        vitrine.textContent = "Popularité";
+    }  
+});
 
 optionDate.addEventListener('click', () => {
     button.style.display = 'flex';
     selector.style.display = 'none';
     vitrine.textContent = "Date";
 });
+optionDate.addEventListener('keydown', e => {
+    if (e.key === "Enter") {
+        button.style.display = 'flex';
+        selector.style.display = 'none';
+        vitrine.textContent = "Date";
+    }  
+});
 
 optionTitre.addEventListener('click', () => {
     button.style.display = 'flex';
     selector.style.display = 'none';
     vitrine.textContent = "Titre";
+});
+optionTitre.addEventListener('keydown', e => {
+    if (e.key ===    "Enter") {
+        button.style.display = 'flex';
+        selector.style.display = 'none';
+        vitrine.textContent = "Titre";
+    }  
 });

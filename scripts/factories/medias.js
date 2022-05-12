@@ -15,6 +15,7 @@ function mediasFactory(data) {
         const likesPrix = document.querySelector('.banner');
 
         //Variables pour la création d'éléments HTML
+        const div = document.createElement('div');
         const h1 = document.createElement('h1');
         const h2 = document.createElement('h2');
         const p = document.createElement('p');
@@ -30,15 +31,20 @@ function mediasFactory(data) {
         p.textContent = tagline;
         nom.textContent = name;
         img.setAttribute('src', picture);
-        img.setAttribute('alt', 'photo' + ' ' + name);
+        img.setAttribute('alt', name);
         h3.textContent = price + '€ / jour';
         displayHeart.className = 'fas fa-heart';
         displayTotalLikes.setAttribute('aria-label', 'nombre de likes total');
+        h1.setAttribute('tabindex', '0');
+        div.setAttribute('tabindex', '0');
+        img.setAttribute('tabindex', '0');
+        likesPrix.setAttribute('tabindex', '0');
         
         //Affichage dans HTML
         texte.appendChild(h1);
-        texte.appendChild(h2);
-        texte.appendChild(p);
+        texte.appendChild(div);
+        div.appendChild(h2);
+        div.appendChild(p);
         nomContact.appendChild(nom);
         photo.appendChild(img);
         likesPrix.appendChild(h3);
@@ -57,31 +63,52 @@ function DataMediasFactory(data) {
     const article = document.createElement('article');
     const div = document.createElement('div');
 
-    div.addEventListener("click", () => {
-        openLightbox();
-        LightboxFactory(data);
-    })
-
     function getUserDataMediaCardDOM() {
         if('video' in data) {
             const video = document.createElement('video');
 
             video.setAttribute('src', videoFile);
             video.setAttribute('title', title);
-            video.setAttribute('tabindex', '0');
 
             div.appendChild(video);
             article.appendChild(div);
+
+            video.setAttribute('tabindex', '0');
+
+            video.addEventListener("click", () => {
+                openLightbox();
+                LightboxFactory(data);
+            });
+        
+            video.addEventListener("keydown", (e) => {
+                if(e.key == "Enter") {
+                    openLightbox();
+                    LightboxFactory(data);
+                }
+            });
 
         } else {
             const img = document.createElement('img');
             
             img.setAttribute('src', picture);
-            img.setAttribute('alt', 'photo' + ' ' + title);
-            img.setAttribute('tabindex', '0');
+            img.setAttribute('alt', title);
             
             div.appendChild(img);
             article.appendChild(div);
+            
+            img.setAttribute('tabindex', '0');
+
+            img.addEventListener("click", () => {
+                openLightbox();
+                LightboxFactory(data);
+            });
+        
+            img.addEventListener("keydown", (e) => {
+                if(e.key == "Enter") {
+                    openLightbox();
+                    LightboxFactory(data);
+                }
+            });
         }
 
         const span = document.createElement('span');
@@ -91,13 +118,21 @@ function DataMediasFactory(data) {
         const heart = document.createElement('i');
 
         heart.addEventListener('click', incrementationLike);
+        heart.addEventListener('keydown', e => {
+            if (e.key == "Enter") {
+              incrementationLike(e);
+            }
+        });
 
         h2.textContent = title;
         p.textContent = likes;
         p.setAttribute('likes', likes);
         p.setAttribute('aria-label', 'nombre de likes');
         heart.className = 'fas fa-heart';
+        heart.setAttribute('aria-label', 'likes');
         span.className = 'infos-image';
+        h2.setAttribute('tabindex', '0');
+        heart.setAttribute('tabindex', '0');
         
         article.appendChild(span);
         span.appendChild(h2);

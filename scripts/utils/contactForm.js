@@ -1,6 +1,6 @@
+const btnContactModal = document.getElementById('cont_btn');
 const main = document.getElementById('main');
 const submitbtn = document.querySelector('.btn-submit');
-const openModal = document.querySelector('.open-modal');
 const btnCloseModal = document.querySelector('.close-modal');
 const modal = document.getElementById('contact_modal');
 const modal2 = document.querySelector(".modal");
@@ -10,7 +10,9 @@ const nom = document.getElementById('nom');
 const email = document.getElementById('email');
 const message = document.getElementById('message');
 const modalConfirm = document.querySelector(".modal-confirm");
+const btnCloseValidateModal = document.querySelector('.close-modal-validate');
 
+btnContactModal.addEventListener('click', displayModal);
 //OUVERTURE ET FERMETURE DE LA MODAL
 // eslint-disable-next-line no-unused-vars
 function displayModal() {
@@ -22,11 +24,12 @@ function displayModal() {
   nom.addEventListener('input', nomValid);
   email.addEventListener('input', emailValid);
   message.addEventListener('input', messageValid);
-  btnCloseModal.focus();
+  document.getElementById('contact_modal').focus();
 }
 
 // eslint-disable-next-line no-unused-vars
 function closeModal() {
+  reinit();
   modal.style.display = 'none';
   main.setAttribute('aria-hidden', 'false');
   modal.setAttribute('aria-hidden', 'true');
@@ -37,19 +40,20 @@ function closeModal() {
   message.removeEventListener('input', messageValid);
   modal2.style.display = "block";
   modalConfirm.style.display = "none";
-  openModal.focus();
-  reinit();
 }
 
 //FERMETURE DE LA MODALE AVEC LE CLAVIER
-btnCloseModal.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);        
 btnCloseModal.addEventListener('keydown', e => {
-  const keyCode = e.keyCode ? e.keyCode : e.which;
-
-  if (modal.setAttribute('aria-hidden') == 'false' && keyCode === 27) {
-      closeModal();
+  if (e.key == "Enter") {
+    closeModal();
   }
 });
+document.onkeydown = function(e) {
+  if (e.key == "Escape") {
+    closeModal();
+  }
+};
 
 //REINITIALISATION DU FORMULAIRE
 function reinit() {
@@ -105,8 +109,7 @@ function validate(e) {
   e.preventDefault();
 
   if (validForm() == true) {
-    modal2.style.display = "none";
-    modalConfirm.style.display = "flex";
+    validateModal();
     return true;
   } else {
     elementsNotValidated();
@@ -123,6 +126,17 @@ function validForm() {
         return true;
       }
   return false;
+}
+
+function validateModal() {
+  modal2.style.display = "none";
+  modalConfirm.style.display = "flex";
+  btnCloseValidateModal.addEventListener('click', closeModal);
+  btnCloseValidateModal.addEventListener('keydown', e => {
+    if (e.key === "Enter") {
+      closeModal();
+    }
+  });
 }
 
 function elementsNotValidated() {

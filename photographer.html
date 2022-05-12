@@ -15,7 +15,7 @@
   <!--HEADER-->
   <header role="banner" id="header">
     <a href="index.html">
-      <img src="assets/images/logo.png" class="logo" alt="Logo Fisheye - Home Page" tabindex="0"/>
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page"/>
     </a>
   </header>
 
@@ -23,14 +23,16 @@
   <main role="main" id="main">
     <div class="photograph-header">
       <div class="texte"></div>
-      <button class="contact_button open-modal" aria-label="Ouvrir le formulaire de contact" onclick="displayModal()" tabindex="0">Contactez-moi</button>
+      <button id="cont_btn" class="contact_button open-modal" aria-label="Contact Me">Contactez-moi</button>
       <div class="photo"></div>
     </div>
 
-    <section role="region" aria-label="Médias du photographe" class="photograph-medias">
+    <div class="banner"></div>
+
+    <section role="button" aria-label="Médias du photographe" class="photograph-medias">
       <div class="trier">
-        <p>Trier par</p>
-        <button aria-label="déroule le menu select pour trier les médias" class="button" tabindex="0" >
+        <p tabindex="0">Trier par</p>
+        <button aria-label="déroule le menu select pour trier les médias" class="button">
           <span class="vitrine">Popularité</span>
           <i aria-hidden="true" class="fas fa-angle-down" id="vitrine_arrow"></i>
         </button>
@@ -44,58 +46,58 @@
           </li>
           <li class="bloc_titre" role="option" data-filter="Titre" tabindex="0">
             <span class="titre">Titre</span>
-            <hr aria-hidden="true" class="line">  
+            <hr aria-hidden="true" class="line">
           </li>
         </ul>
       </div>
 
       <div class="media_section"></div>
-      <div class="lightbox"></div>
-      <div class="banner"></div>
-
+      <div role="dialog" class="lightbox" tabindex="-1"></div>
+      
     </section>
 
   </main>
 
   <!--MODAL DE CONTACT-->
-  <div role="dialog" id="contact_modal" aria-describedby="contactPhotographer">
+  <div role="dialog" id="contact_modal" aria-describedby="contactPhotographer" tabindex="-1">
     <div class="modal" id="contactPhotographer">
       <header>
-        <div class="nomContact">
+        <div class="nomContact" tabindex="0">
           <h2>Contactez-moi</h2>
         </div>
-        <img class="close-modal" src="assets/icons/close.svg" alt="ferme le dialog" tabindex="2"/>
-
       </header>
+
       <form role="form" method="get">
         <div class="formData" data-error="Veuillez saisir votre prénom contenant deux lettres minimum" aria-describedby="prenom">
-          <label for="prenom">Prénom</label>
-          <input class="text-control" tabindex="2" name="firstName" type="text" id="prenom" placeholder="Cloé"
+          <label for="prenom" tabindex="0">Prénom</label>
+          <input class="text-control" tabindex="0" name="firstName" type="text" id="prenom" placeholder="Cloé"
             minlength="2" maxlength="30" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre nom contenant deux lettres minimum" aria-describedby="nom">
-          <label for="nom">Nom</label>
-          <input class="text-control" tabindex="2" name="lastName" type="text" id="nom" placeholder="Boudrant" minlength="2"
+          <label for="nom" tabindex="0">Nom</label>
+          <input class="text-control" tabindex="0" name="lastName" type="text" id="nom" placeholder="Boudrant" minlength="2"
             maxlength="30" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre email" aria-describedby="email">
-          <label for="email">Email</label>
-          <input class="text-control" tabindex="2" name="mail" type="email" id="email" placeholder="cloeboudrant@protonmail.com"
+          <label for="email" tabindex="0">Email</label>
+          <input class="text-control" tabindex="0" name="mail" type="email" id="email" placeholder="cloeboudrant@protonmail.com"
             maxlength="50" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre message" aria-describedby="message">
-          <label for="message">Votre message</label>
-          <textarea class="text-control" tabindex="2" name="votreMessage" id="message" placeholder="Mon message au photographe..."
+          <label for="message" tabindex="0">Votre message</label>
+          <textarea class="text-control" tabindex="0" name="votreMessage" id="message" placeholder="Mon message au photographe..."
             maxlength="100" required></textarea>
         </div>
 
-        <button class="contact_button btn-submit" type="submit" aria-labelledby="labelSubmit" tabindex="2">Envoyer</button>
+        <button class="contact_button btn-submit" type="submit" aria-labelledby="Send" tabindex="0">Envoyer</button>
       </form>
+
+      <img class="close-modal" src="assets/icons/close.svg" alt="Close Contact form" tabindex="0"/>
     </div>
 
-    <div aria-label="dialog de validation d'envoi" class="modal-confirm" aria-describedby="confirmDispatch">
-      <p id="confirmDispatch">Votre message a bien été envoyé !</p>
-      <img class="close-modal" src="assets/icons/close.svg" onclick="closeModal()" alt="ferme le dialog" />
+    <div aria-label="dialog de validation d'envoi" class="modal-confirm" aria-describedby="confirmDispatch" tabindex="-1">
+      <p id="confirmDispatch" tabindex="0">Votre message a bien été envoyé !</p>
+      <img class="close-modal close-modal-validate" src="assets/icons/close.svg" alt="Close Contact form" tabindex="0"/>
     </div>
   </div>
 

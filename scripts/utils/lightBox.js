@@ -5,16 +5,15 @@ const lightbox = document.querySelector('.lightbox');
 
 function openLightbox() {
     lightbox.style.display = "flex";
-    }
+    document.querySelector('.lightbox').focus();
+    document.onkeydown = function(e) {
+        if (e.key === "Escape") {
+            closeLightbox();
+        }
+      };
+}
 
 function closeLightbox() {
     lightbox.style.display = "none";
-    const lightboxMedia = document.querySelector('.lightbox__container');
-    const lightboxIcons = document.querySelector('.lightbox__icons');
-
-    lightbox.appendChild(lightboxMedia);
-    lightbox.appendChild(lightboxIcons);
-
-    lightbox.removeChild(lightboxMedia);
-    lightbox.removeChild(lightboxIcons);
+    lightbox.innerHTML = '';
 }

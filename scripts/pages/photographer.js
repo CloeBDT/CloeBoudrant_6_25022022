@@ -69,9 +69,13 @@ async function init() {
     option.forEach((li) => {
         li.addEventListener('click', (e) => {
             displayMediaData(media, e.currentTarget.dataset.filter);
-        })
-    })
-
+        });
+        li.addEventListener('keydown', (e) => {
+            if (e.key === "Enter") {
+                displayMediaData(media, e.currentTarget.dataset.filter);
+            }
+        });
+    });
     displayData(photographers);
     displayMediaData(media, "Popularité");
     calcTotalLikes();
