@@ -6,7 +6,7 @@ function LightboxFactory(data) {
     const { title, image, video } = data;
     const videoFile = `assets/medias/${video}`;
     const picture = `assets/medias/${image}`;
-
+    
     const lightbox = document.querySelector('.lightbox');
 
     if('video' in data) {

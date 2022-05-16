@@ -68,7 +68,7 @@ function DataMediasFactory(data) {
             const video = document.createElement('video');
 
             video.setAttribute('src', videoFile);
-            video.setAttribute('title', title);
+            video.setAttribute('title', title + ', closeup view');
 
             div.appendChild(video);
             article.appendChild(div);
@@ -91,7 +91,7 @@ function DataMediasFactory(data) {
             const img = document.createElement('img');
             
             img.setAttribute('src', picture);
-            img.setAttribute('alt', title);
+            img.setAttribute('alt', title + ', closeup view');
             
             div.appendChild(img);
             article.appendChild(div);
@@ -110,7 +110,7 @@ function DataMediasFactory(data) {
                 }
             });
         }
-
+        
         const span = document.createElement('span');
         const h2 = document.createElement('h2');
         const p = document.createElement('p');
@@ -138,6 +138,9 @@ function DataMediasFactory(data) {
         span.appendChild(h2);
         span.appendChild(p);
         span.appendChild(heart);
+        
+        let mediaArray =[data];
+        console.log(mediaArray);
 
         return article;
     }

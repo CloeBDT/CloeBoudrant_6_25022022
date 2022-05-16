@@ -28,7 +28,8 @@ export default function photographerFactory(data) {
 
     //Assignation des valeurs aux attributs img, h2, h3, h4, p
     img.setAttribute('src', picture);
-    div1.setAttribute('alt', name);
+    img.setAttribute('alt', name);
+    div1.setAttribute('aria-label', name);
     h2.textContent = name;
     h2.setAttribute('aria-label', name);
     h3.textContent = city + ', ' + country;

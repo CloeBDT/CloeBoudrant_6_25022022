@@ -363,11 +363,12 @@ video:hover {
 .lightbox {
     display: none;
     position: fixed;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgb(255, 255, 255);
     z-index: 3;
 }
@@ -417,26 +418,27 @@ video:hover {
 
 .lightbox img, 
 .lightbox video {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
+    
     margin-top: 60px;
     width: 73%;
-    height: auto;
+    
+    flex-grow: 1;
     object-fit: cover;
     box-shadow: 5px 0 0 rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    
 }
 
 .lightbox h2 {
+    display: flex;
     color: #901C1C;
     height: 60px;
     margin-block-start: 0;
     margin-block-end: 0;
-    align-items: center;
     font-weight: 400;
     font-size: 1.5rem;
+    width: 73%;
+    align-items: center;
 }
 
 .lightbox h2:focus {
@@ -466,6 +468,7 @@ video:hover {
     padding: 35px;
     box-shadow: rgba(0, 0, 0, 0.521) 0 0 15px;
     overflow: auto;
+    position: relative;
 }
 
 .modal header {
@@ -476,8 +479,11 @@ video:hover {
 
 .modal img,
 .modal-confirm img {
-    margin-top: 25px;
+    position: absolute;
+    
     cursor: pointer;
+    top: 35px;
+    right: 35px;
 }
 
 .modal header h2,
