@@ -94,14 +94,17 @@
     color: white;
 }
 
+.banner:focus img  {
+    filter: invert(92%) sepia(93%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
+}
+
 .banner p,
 .banner h3 {
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.banner i {
-    flex: 0.1;
+.banner img {
     margin-left: 10px;
     order: 1;
 }
@@ -303,7 +306,7 @@ ul {
     width: 100%;
 }
 
-.media_section img, video {
+.media_section .media-image, video {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -312,7 +315,7 @@ ul {
     cursor: pointer;
 }
 
-.media_section img:hover, 
+.media_section .media-image:hover, 
 video:hover {
     opacity: 0.7;
 }
@@ -347,16 +350,17 @@ video:hover {
     text-align: center;
 }
 
-.media_section i {
+.media_section .heart-like {
+    filter: invert(12%) sepia(44%) saturate(5161%) hue-rotate(352deg) brightness(107%) contrast(87%);
     text-align: end;
     flex: 0.05;
     transition: all 0.2s ease-in-out;
 }
 
-.media_section i:hover,
-.media_section i:focus {
+.media_section .heart-like:hover,
+.media_section .heart-like:focus {
     cursor: pointer;
-    color: #DB8876;
+    filter: invert(85%) sepia(21%) saturate(3862%) hue-rotate(306deg) brightness(92%) contrast(84%);
 }
 
 /**********LIGHTBOX**********/
@@ -374,8 +378,8 @@ video:hover {
 }
 
 #lightbox__close {
-    color: #901C1C;
-    font-size: 2.875rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 75px;
     left: 90vw;
@@ -391,8 +395,8 @@ video:hover {
 
 #lightbox__next,
 #lightbox__prev {
-    color: #901C1C;
-    font-size: 2.875rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 47%;
     z-index: 4;
@@ -416,15 +420,14 @@ video:hover {
     opacity: .5;
 }
 
-.lightbox img, 
+.media-lightbox, 
 .lightbox video {
     
     margin-top: 60px;
     width: 73%;
-    
     flex-grow: 1;
     object-fit: cover;
-    box-shadow: 5px 0 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 0 0 rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     
 }

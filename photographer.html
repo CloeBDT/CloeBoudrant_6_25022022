@@ -34,11 +34,11 @@
         <p tabindex="0">Trier par</p>
         <button aria-label="déroule le menu select pour trier les médias" class="button">
           <span class="vitrine">Popularité</span>
-          <i aria-hidden="true" class="fas fa-angle-down" id="vitrine_arrow"></i>
+          <i class="fas fa-angle-down" id="vitrine_arrow"></i>
         </button>
         <ul class="selector" role="listbox" tabindex="-1">
-          <li class="bloc_popularite" role="option" data-filter="Popularité" tabindex="0">
-            <i aria-hidden="true" class="fas fa-angle-up" id="arrow">Popularité</i>
+          <li class="bloc_popularite" role="option" data-filter="Popularité" aria-label="Popularité" tabindex="0">
+            <i class="fas fa-angle-up" id="arrow">Popularité</i>
           </li>
           <li class="bloc_date" role="option" data-filter="Date" tabindex="0">
             <span class="date">Date</span>
@@ -69,27 +69,27 @@
 
       <form role="form" method="get">
         <div class="formData" data-error="Veuillez saisir votre prénom contenant deux lettres minimum" aria-describedby="prenom">
-          <label for="prenom" tabindex="0">Prénom</label>
+          <label id="first-name" for="prenom" tabindex="0">Prénom</label>
           <input class="text-control" tabindex="0" name="firstName" type="text" id="prenom" placeholder="Cloé"
-            minlength="2" maxlength="30" required />
+            minlength="2" maxlength="30" aria-labelledby="first-name" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre nom contenant deux lettres minimum" aria-describedby="nom">
-          <label for="nom" tabindex="0">Nom</label>
+          <label id="last-name" for="nom" tabindex="0">Nom</label>
           <input class="text-control" tabindex="0" name="lastName" type="text" id="nom" placeholder="Boudrant" minlength="2"
-            maxlength="30" required />
+            maxlength="30" aria-labelledby="last-name" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre email" aria-describedby="email">
-          <label for="email" tabindex="0">Email</label>
+          <label id="e-mail" for="email" tabindex="0">Email</label>
           <input class="text-control" tabindex="0" name="mail" type="email" id="email" placeholder="cloeboudrant@protonmail.com"
-            maxlength="50" required />
+            maxlength="50" aria-labelledby="e-mail"required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre message" aria-describedby="message">
-          <label for="message" tabindex="0">Votre message</label>
+          <label id="your-message" for="message" tabindex="0">Votre message</label>
           <textarea class="text-control" tabindex="0" name="votreMessage" id="message" placeholder="Mon message au photographe..."
-            maxlength="100" required></textarea>
+            maxlength="100" aria-labelledby="your-message"required></textarea>
         </div>
 
-        <button class="contact_button btn-submit" type="submit" aria-labelledby="Send" tabindex="0">Envoyer</button>
+        <button class="contact_button btn-submit" type="submit" aria-label="Send" tabindex="0">Envoyer</button>
       </form>
 
       <img class="close-modal" src="assets/icons/close.svg" alt="Close Contact form" tabindex="0"/>

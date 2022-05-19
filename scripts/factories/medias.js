@@ -23,7 +23,7 @@ function mediasFactory(data) {
         const img = document.createElement('img');
         const h3 = document.createElement ('h3');
         const displayTotalLikes = document.createElement('p');
-        const displayHeart = document.createElement('i');
+        const displayHeart = document.createElement('img');
   
         //Assignation des valeurs aux attributs img, h1, h2, p
         h1.textContent = name;
@@ -33,8 +33,8 @@ function mediasFactory(data) {
         img.setAttribute('src', picture);
         img.setAttribute('alt', name);
         h3.textContent = price + '€ / jour';
-        displayHeart.className = 'fas fa-heart';
-        displayTotalLikes.setAttribute('aria-label', 'nombre de likes total');
+        displayHeart.setAttribute('src', 'assets/icons/heart.svg');
+        displayHeart.setAttribute('alt', 'likes');
         h1.setAttribute('tabindex', '0');
         div.setAttribute('tabindex', '0');
         img.setAttribute('tabindex', '0');
@@ -92,6 +92,7 @@ function DataMediasFactory(data) {
             
             img.setAttribute('src', picture);
             img.setAttribute('alt', title + ', closeup view');
+            img.className = 'media-image';
             
             div.appendChild(img);
             article.appendChild(div);
@@ -115,7 +116,7 @@ function DataMediasFactory(data) {
         const h2 = document.createElement('h2');
         const p = document.createElement('p');
         p.className = 'likes';
-        const heart = document.createElement('i');
+        const heart = document.createElement('img');
 
         heart.addEventListener('click', incrementationLike);
         heart.addEventListener('keydown', e => {
@@ -128,7 +129,8 @@ function DataMediasFactory(data) {
         p.textContent = likes;
         p.setAttribute('likes', likes);
         p.setAttribute('aria-label', 'nombre de likes');
-        heart.className = 'fas fa-heart';
+        heart.setAttribute('src', 'assets/icons/heart.svg');
+        heart.className = 'heart-like';
         heart.setAttribute('aria-label', 'likes');
         span.className = 'infos-image';
         h2.setAttribute('tabindex', '0');

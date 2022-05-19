@@ -20,29 +20,30 @@ function LightboxFactory(data) {
         const img = document.createElement('img');
         img.setAttribute('src', picture);
         img.setAttribute('alt', title);
+        img.className = 'media-lightbox';
         lightbox.appendChild(img);
         img.setAttribute('tabindex', '0');
     }
     
     const intituleMedia = document.createElement('h2');
-    const suivant = document.createElement('i');
-    const precedent = document.createElement('i');
-    const fermer = document.createElement('i');
+    const suivant = document.createElement('img');
+    const precedent = document.createElement('img');
+    const fermer = document.createElement('img');
     intituleMedia.setAttribute('tabindex', '0');
 
-    suivant.className = 'fas fa-angle-right';
+    suivant.setAttribute('src', 'assets/icons/next.svg');
     suivant.id = 'lightbox__next';
     suivant.setAttribute('aria-label', 'Next image');
     suivant.setAttribute('tabindex', '0');
     
 
-    precedent.className = 'fas fa-angle-left';
+    precedent.setAttribute('src', 'assets/icons/previous.svg');
     precedent.id = 'lightbox__prev';
     precedent.setAttribute('aria-label', 'Previous image');
     precedent.setAttribute('tabindex', '0');
     
 
-    fermer.className = 'fas fa-times';
+    fermer.setAttribute('src', 'assets/icons/close2.svg');
     fermer.id = 'lightbox__close';
     fermer.setAttribute('aria-label', 'Close dialog');
     fermer.setAttribute('tabindex', '0');
