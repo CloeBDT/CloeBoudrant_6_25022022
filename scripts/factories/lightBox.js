@@ -36,8 +36,7 @@ function LightboxFactory(data) {
     suivant.id = 'lightbox__next';
     suivant.setAttribute('aria-label', 'Next image');
     suivant.setAttribute('tabindex', '0');
-    suivant.addEventListener('click', next);
-    
+    suivant.addEventListener('click', next);    
 
     precedent.setAttribute('src', 'assets/icons/previous.svg');
     precedent.id = 'lightbox__prev';
@@ -52,10 +51,25 @@ function LightboxFactory(data) {
     fermer.setAttribute('tabindex', '0');
     fermer.addEventListener('click', closeLightbox);
     fermer.addEventListener('keydown', e => {
-        if (e.key === "Enter") {
+        if (e.key == "Enter") {
             closeLightbox();    
         }
     });
+
+    document.onkeydown = keyboardNav;
+
+    function keyboardNav(e) {
+        if (e.key == "37") {    
+            prev();
+        }
+        else if (e.key == "39") {   
+            next();
+        }
+
+        if(e.key == "Escape") { 
+            closeLightbox();
+        }
+    }
 
     lightbox.appendChild(intituleMedia);
     lightbox.appendChild(precedent);

@@ -1,4 +1,6 @@
 export { mediasFactory, DataMediasFactory, next, prev };
+export let mediaArray = [];
+
 import { openLightbox } from '../utils/lightBox.js';
 import { LightboxFactory } from '../factories/lightBox.js';
 import { incrementationLike } from '../pages/photographer.js';
@@ -55,6 +57,8 @@ function mediasFactory(data) {
 }
 
 //FACTORY DE L'AFFICHAGE DES MEDIAS DES PHOTOGRAPHES SUR LEURS PAGES
+let currentIndex = 0;
+
 function DataMediasFactory(data) {
     const { image, title, likes, video } = data;
     const videoFile = `assets/medias/${video}`;
@@ -78,12 +82,14 @@ function DataMediasFactory(data) {
             video.addEventListener("click", () => {
                 openLightbox();
                 LightboxFactory(data);
+                currentIndex = (mediaArray.indexOf(data));
             });
         
             video.addEventListener("keydown", (e) => {
                 if(e.key == "Enter") {
                     openLightbox();
                     LightboxFactory(data);
+                    currentIndex = (mediaArray.indexOf(data));
                 }
             });
 
@@ -102,12 +108,14 @@ function DataMediasFactory(data) {
             img.addEventListener("click", () => {
                 openLightbox();
                 LightboxFactory(data);
+                currentIndex = (mediaArray.indexOf(data));
             });
         
             img.addEventListener("keydown", (e) => {
                 if(e.key == "Enter") {
                     openLightbox();
                     LightboxFactory(data);
+                    currentIndex = (mediaArray.indexOf(data));
                 }
             });
         }
@@ -141,8 +149,7 @@ function DataMediasFactory(data) {
         span.appendChild(p);
         span.appendChild(heart);
         
-        let mediaArray =[data];
-        console.log(mediaArray);
+        mediaArray.push(data)
 
         return article;
     }
@@ -150,9 +157,18 @@ function DataMediasFactory(data) {
 }
 
 function next() {
-    console.log('nextttt');
+    if (currentIndex >= 0 && currentIndex < (mediaArray.length - 1)) {
+        const lightbox = document.querySelector('.lightbox');
+        lightbox.innerHTML = ''
+        currentIndex++
+        LightboxFactory(mediaArray[currentIndex])
+    }
 }
-
 function prev() {
-    console.log('previous');
+    if (currentIndex >= 1) {
+        const lightbox = document.querySelector('.lightbox');
+        lightbox.innerHTML = ''
+        currentIndex--
+        LightboxFactory(mediaArray[currentIndex])
+    }
 }

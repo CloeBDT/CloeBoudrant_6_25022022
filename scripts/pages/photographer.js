@@ -1,4 +1,4 @@
-import { mediasFactory, DataMediasFactory } from '../factories/medias.js';
+import { mediasFactory, DataMediasFactory, mediaArray } from '../factories/medias.js';
 export { incrementationLike };
 
 //Renvoi vers la page du photographe ciblé
@@ -25,6 +25,7 @@ async function displayMediaData(media, orderSort) {
     //Cible l'emplacement ou afficher les éléments
     const mediaSection = document.querySelector('.media_section');
     mediaSection.innerHTML = '';
+    mediaArray.length = 0;
     //Renvoi des médias triés
     sortMedia(media, orderSort);
     

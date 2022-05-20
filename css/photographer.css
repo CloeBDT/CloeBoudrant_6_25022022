@@ -112,6 +112,7 @@
 .banner p {
     flex: 0.1;
     order: 0;
+    width: 2.2rem;
 }
 
 .banner h3 {
@@ -420,14 +421,13 @@ video:hover {
 
 .media-lightbox, 
 .lightbox video {
-    
     margin-top: 60px;
+    height: 1px;
     width: 73%;
     flex-grow: 1;
     object-fit: cover;
     box-shadow: 4px 0 0 rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    
 }
 
 .lightbox h2 {
