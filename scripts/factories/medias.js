@@ -1,4 +1,4 @@
-export { mediasFactory, DataMediasFactory };
+export { mediasFactory, DataMediasFactory, next, prev };
 import { openLightbox } from '../utils/lightBox.js';
 import { LightboxFactory } from '../factories/lightBox.js';
 import { incrementationLike } from '../pages/photographer.js';
@@ -147,4 +147,12 @@ function DataMediasFactory(data) {
         return article;
     }
     return {getUserDataMediaCardDOM};
+}
+
+function next() {
+    console.log('nextttt');
+}
+
+function prev() {
+    console.log('previous');
 }

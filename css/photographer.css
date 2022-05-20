@@ -172,7 +172,8 @@
 
 #vitrine_arrow {
     flex: 0.3;
-    font-size: 1.25rem;
+    width: 0.8rem;
+    height: 0.8rem;
 }
 
 .selector {
@@ -228,20 +229,17 @@ ul {
     font-size: 1.125rem;
 }
 
-#arrow {
+.bloc_popularite span {
     display: flex;
     align-items: center;
-    height: 100%;
-    flex-direction: row-reverse;
     justify-content: space-around;
-    font-size: 1.25rem;
-    font-family: "DM Sans";
-    font-size: 1.125rem;
+    flex-direction: row-reverse;
+    height: 100%;
 }
 
-#arrow::before {
-    font-family: 'FontAwesome';
-    font-size: 1.25rem;
+#arrow {
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
 .bloc_date,
