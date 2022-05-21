@@ -1,4 +1,7 @@
 import { mediasFactory, DataMediasFactory, mediaArray } from '../factories/medias.js';
+import { next, prev } from '../factories/medias.js';
+import { closeLightbox } from '../utils/lightBox.js';
+import { closeModal } from '../utils/contactForm.js';
 export { incrementationLike };
 
 //Renvoi vers la page du photographe ciblé
@@ -113,3 +116,18 @@ function calcTotalLikes() {
         bannerTotal.innerHTML = sum;
     }
 }
+
+//Fonction de fermeture des modals contact et lightbox avec Echap
+document.onkeydown = keyboardNav;
+
+    function keyboardNav(e) {
+        switch(e.key) {
+            case 'ArrowRight' : next();
+            break
+            case 'ArrowLeft' : prev();
+            break
+            case 'Escape' :closeLightbox();
+                           closeModal();
+            break
+        }
+    }

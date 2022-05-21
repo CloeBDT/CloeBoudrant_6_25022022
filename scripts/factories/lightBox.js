@@ -56,19 +56,6 @@ function LightboxFactory(data) {
         }
     });
 
-    document.onkeydown = keyboardNav;
-
-    function keyboardNav(e) {
-        switch(e.key) {
-            case 'ArrowRight' : next();
-            break
-            case 'ArrowLeft' : prev();
-            break
-            case 'Escape' :closeLightbox();
-            break
-        }
-    }
-
     lightbox.appendChild(intituleMedia);
     lightbox.appendChild(precedent);
     lightbox.appendChild(suivant);

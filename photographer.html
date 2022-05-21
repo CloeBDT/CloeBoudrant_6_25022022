@@ -13,14 +13,14 @@
 
 <body>
   <!--HEADER-->
-  <header role="banner" id="header">
+  <header id="header">
     <a href="index.html">
       <img src="assets/images/logo.png" class="logo" alt="Fisheye Home Page"/>
     </a>
   </header>
 
   <!--MAIN-->
-  <main role="main" id="main">
+  <main id="main">
     <div class="photograph-header">
       <div class="texte"></div>
       <button id="cont_btn" class="contact_button open-modal" aria-label="Contact Me">Contactez-moi</button>
@@ -29,8 +29,8 @@
 
     <div class="banner"></div>
 
-    <section role="region" aria-label="Médias du photographe" class="photograph-medias">
-      <div role="button" class="trier">
+    <section aria-label="Médias du photographe" class="photograph-medias">
+      <div class="trier">
         <p tabindex="0">Trier par</p>
         <button aria-label="déroule le menu select pour trier les médias" class="button">
           <span class="vitrine">Popularité</span>
@@ -67,7 +67,7 @@
         </div>
       </header>
 
-      <form role="form" method="get">
+      <form method="get">
         <div class="formData" data-error="Veuillez saisir votre prénom contenant deux lettres minimum" aria-describedby="prenom">
           <label id="first-name" for="prenom" tabindex="0">Prénom</label>
           <input class="text-control" tabindex="0" name="firstName" type="text" id="prenom" placeholder="Cloé"
@@ -81,12 +81,12 @@
         <div class="formData" data-error="Veuillez saisir votre email" aria-describedby="email">
           <label id="e-mail" for="email" tabindex="0">Email</label>
           <input class="text-control" tabindex="0" name="mail" type="email" id="email" placeholder="cloeboudrant@protonmail.com"
-            maxlength="50" aria-labelledby="e-mail"required />
+            maxlength="50" aria-labelledby="e-mail" required />
         </div>
         <div class="formData" data-error="Veuillez saisir votre message" aria-describedby="message">
           <label id="your-message" for="message" tabindex="0">Votre message</label>
           <textarea class="text-control" tabindex="0" name="votreMessage" id="message" placeholder="Mon message au photographe..."
-            maxlength="100" aria-labelledby="your-message"required></textarea>
+            maxlength="100" aria-labelledby="your-message" required></textarea>
         </div>
 
         <button class="contact_button btn-submit" type="submit" aria-label="Send" tabindex="0">Envoyer</button>
@@ -95,7 +95,7 @@
       <img class="close-modal" src="assets/icons/close.svg" alt="Close Contact form" tabindex="0"/>
     </div>
 
-    <div aria-label="dialog de validation d'envoi" class="modal-confirm" aria-describedby="confirmDispatch" tabindex="-1">
+    <div aria-label="SendConfirmation" class="modal-confirm" aria-describedby="confirmDispatch" tabindex="-1">
       <p id="confirmDispatch" tabindex="0">Votre message a bien été envoyé !</p>
       <img class="close-modal close-modal-validate" src="assets/icons/close.svg" alt="Close Contact form" tabindex="0"/>
     </div>
@@ -106,9 +106,9 @@
   <script type="module" src="scripts/factories/medias.js"></script>
   <script type="module" src="scripts/factories/photographer.js"></script>
   <script type="module" src="scripts/pages/photographer.js"></script>
-  <script type="module" src="scripts/utils/lightBox.js" defer></script>
+  <script type="module" src="scripts/utils/lightBox.js"></script>
   <script type="module" src="scripts/utils/sorter.js"></script>
-  <script src="scripts/utils/contactForm.js"></script>
+  <script type="module" src="scripts/utils/contactForm.js"></script>
 </body>
 
 </html>

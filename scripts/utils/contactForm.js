@@ -1,3 +1,5 @@
+export { closeModal };
+
 const btnContactModal = document.getElementById('cont_btn');
 const main = document.getElementById('main');
 const submitbtn = document.querySelector('.btn-submit');
@@ -49,11 +51,6 @@ btnCloseModal.addEventListener('keydown', e => {
     closeModal();
   }
 });
-document.onkeydown = function(e) {
-  if (e.key == "Escape") {
-    closeModal();
-  }
-};
 
 //REINITIALISATION DU FORMULAIRE
 function reinit() {

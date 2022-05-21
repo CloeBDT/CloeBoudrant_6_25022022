@@ -1,6 +1,5 @@
 export { mediasFactory, DataMediasFactory, next, prev };
 export let mediaArray = [];
-
 import { openLightbox } from '../utils/lightBox.js';
 import { LightboxFactory } from '../factories/lightBox.js';
 import { incrementationLike } from '../pages/photographer.js';
