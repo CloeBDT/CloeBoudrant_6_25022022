@@ -59,15 +59,13 @@ function LightboxFactory(data) {
     document.onkeydown = keyboardNav;
 
     function keyboardNav(e) {
-        if (e.key == "37") {    
-            prev();
-        }
-        else if (e.key == "39") {   
-            next();
-        }
-
-        if(e.key == "Escape") { 
-            closeLightbox();
+        switch(e.key) {
+            case 'ArrowRight' : next();
+            break
+            case 'ArrowLeft' : prev();
+            break
+            case 'Escape' :closeLightbox();
+            break
         }
     }
 
