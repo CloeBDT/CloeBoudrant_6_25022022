@@ -36,13 +36,23 @@ function LightboxFactory(data) {
     suivant.id = 'lightbox__next';
     suivant.setAttribute('aria-label', 'Next image');
     suivant.setAttribute('tabindex', '0');
-    suivant.addEventListener('click', next);    
+    suivant.addEventListener('click', next);  
+    suivant.addEventListener('keydown', e => {
+        if (e.key == "Enter") {
+            next();    
+        }
+    });  
 
     precedent.setAttribute('src', 'assets/icons/previous.svg');
     precedent.id = 'lightbox__prev';
     precedent.setAttribute('aria-label', 'Previous image');
     precedent.setAttribute('tabindex', '0');
     precedent.addEventListener('click', prev);
+    precedent.addEventListener('keydown', e => {
+        if (e.key == "Enter") {
+            prev();    
+        }
+    });
     
 
     fermer.setAttribute('src', 'assets/icons/close2.svg');
